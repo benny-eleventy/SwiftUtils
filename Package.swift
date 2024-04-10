@@ -18,8 +18,9 @@ let package = Package(
             name: "SwiftUtils",
             dependencies: [],
             resources: [
-                .process("Resources/Assets.xcassets"),
-                .process("Resources/highlight_glasp.png")
+                .process("Resources/highlight_glasp.png"),
+                .process("Resources/Collections.svg"),
+                .copy("Resources"),
                         
             ]
             
