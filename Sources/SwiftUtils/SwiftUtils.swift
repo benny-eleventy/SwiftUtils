@@ -3,7 +3,8 @@
 import Foundation
 
 extension Bundle {
-    public static var swiftUtilsResources: Bundle {
+   
+    public static var myIconsModule: Bundle {
         return Bundle.module
     }
 }
