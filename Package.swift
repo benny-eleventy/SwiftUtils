@@ -18,8 +18,6 @@ let package = Package(
             name: "SwiftUtils",
             dependencies: [],
             resources: [
-//                .process("Resources/highlight_glasp.png"),
-//                .process("Resources/Collections.svg"),
                .process("Resources"),
                         
             ]
