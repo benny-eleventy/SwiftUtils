@@ -20,7 +20,7 @@ let package = Package(
             resources: [
                 .process("Resources/highlight_glasp.png"),
                 .process("Resources/Collections.svg"),
-                .copy("Resources"),
+//                .copy("Resources"),
                         
             ]
             
