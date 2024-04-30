@@ -12,12 +12,14 @@ public struct IconStyle {
     public var color: Color
         public var backgroundColor: Color
         public var type: Font.Weight
-    public init(color: Color, backgroundColor: Color, type: Font.Weight) {
+    public var size: CGFloat
+    public init(color: Color, backgroundColor: Color, type: Font.Weight, size: CGFloat = 24) {
             self.color = color
             self.backgroundColor = backgroundColor
             self.type = type
+        self.size = size
         }
-    static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, type: .regular)
+    static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, type: .regular, size: 24)
 }
 public enum Icons: String {
     // System SF Symbols
@@ -76,7 +78,7 @@ public struct CustomIcon: View {
     public var body: some View {
         icon.image // Assuming you use SPM's default resource bundle
                .foregroundColor(style.color)
-               .font(.system(size: 24, weight: style.type))
+               .font(.system(size: style.size, weight: style.type))
                .background(style.backgroundColor)
                .accessibilityLabel(Text(id))
        }
