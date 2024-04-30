@@ -19,23 +19,44 @@ public struct IconStyle {
         }
     static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, type: .regular)
 }
-public enum SFSymbol: String {
+public enum Icons: String {
+    // System SF Symbols
     case lighteningBolt = "bolt.fill"
     case star = "star.fill"
     case heart = "heart.fill"
+
+    // Custom icons
     case window = "window"
     case annotation = "annotation"
-    // Add all the SF Symbols you need
+    case highestPrority = "highestPriority"
+    
 
+    // Determine if an icon is custom
+    private var isCustom: Bool {
+        switch self {
+        case .window, .annotation , .highestPrority :
+            return true
+        default:
+            return false
+        }
+    }
+
+    // Simplified image property using raw values
     var image: Image {
-        Image(self.rawValue, bundle: .module)
+        if isCustom {
+            // Load custom icons from the package's resources
+            return Image(self.rawValue, bundle: .module)
+        } else {
+            // Load system icons using their SF Symbol names
+            return Image(systemName: self.rawValue)
+        }
     }
 }
 public struct CustomIcon: View {
-    public let icon: SFSymbol
+    public let icon: Icons
        public let style: IconStyle
        public let id: String
-    public init(icon: SFSymbol, style: IconStyle, id: String) {
+    public init(icon: Icons, style: IconStyle, id: String) {
            self.icon = icon
            self.style = style
            self.id = id
