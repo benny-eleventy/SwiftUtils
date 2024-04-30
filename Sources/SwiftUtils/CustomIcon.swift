@@ -19,18 +19,29 @@ public struct IconStyle {
         }
     static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, type: .regular)
 }
+public enum SFSymbol: String {
+    case lighteningBolt = "bolt.fill"
+    case star = "star.fill"
+    case heart = "heart.fill"
+    case window = "window"
+    case annotation = "annotation"
+    // Add all the SF Symbols you need
 
+    var image: Image {
+        Image(self.rawValue, bundle: .module)
+    }
+}
 public struct CustomIcon: View {
-    public let icon: String
+    public let icon: SFSymbol
        public let style: IconStyle
        public let id: String
-    public init(icon: String, style: IconStyle, id: String) {
+    public init(icon: SFSymbol, style: IconStyle, id: String) {
            self.icon = icon
            self.style = style
            self.id = id
        }
     public var body: some View {
-           Image(icon, bundle: .module) // Assuming you use SPM's default resource bundle
+        icon.image // Assuming you use SPM's default resource bundle
                .foregroundColor(style.color)
                .font(.system(size: 24, weight: style.type))
                .background(style.backgroundColor)
@@ -42,7 +53,7 @@ public struct CustomIcon: View {
 #if DEBUG
 struct CustomIcon_Previews: PreviewProvider {
     static var previews: some View {
-        CustomIcon(icon: "window", style: .defaultStyle , id : "Icon")
+        CustomIcon(icon: .window, style: .defaultStyle , id : "Icon")
     }
 }
 #endif
