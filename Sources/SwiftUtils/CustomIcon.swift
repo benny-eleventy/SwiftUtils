@@ -22,8 +22,7 @@ public struct IconStyle {
 public enum Icons: String {
     // System SF Symbols
     case lighteningBolt = "bolt.fill"
-    case star = "star.fill"
-    case heart = "heart.fill"
+ 
 
     // Custom icons
     case window = "window"
@@ -74,7 +73,7 @@ public struct CustomIcon: View {
 #if DEBUG
 struct CustomIcon_Previews: PreviewProvider {
     static var previews: some View {
-        CustomIcon(icon: .window, style: .defaultStyle , id : "Icon")
+        CustomIcon(icon: .lighteningBolt, style: .defaultStyle , id : "Icon")
     }
 }
 #endif
