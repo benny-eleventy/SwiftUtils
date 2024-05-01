@@ -42,6 +42,7 @@ public enum IconNames: String {
         case window = "window"
         case annotation = "annotation"
         case highestPriority = "highestPriority"
+        case mosaic = "mosaic"
         
 
     // Determine if an icon is custom
