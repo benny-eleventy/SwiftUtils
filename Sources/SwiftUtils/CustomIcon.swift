@@ -59,7 +59,7 @@ public enum IconNames: String {
     var image: Image {
         if isCustom {
             // Load custom icons from the package's resources
-            return Image(self.rawValue, bundle: .module)
+            return Image(self.rawValue, bundle: .myIconsModule)
         } else {
             // Load system icons using their SF Symbol names
             return Image(systemName: self.rawValue)
@@ -88,6 +88,7 @@ public struct CustomIcon: View {
                .background(style.backgroundColor)
                .accessibilityLabel(Text(id))
        }
+
 }
 
 // This will be useful for previews in Xcode
