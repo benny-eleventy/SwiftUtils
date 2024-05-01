@@ -9,21 +9,20 @@ import Foundation
 import SwiftUI
 
 public struct IconStyle {
-    public var color: Color
+        public var color: Color
         public var backgroundColor: Color
-        public var type: Font.Weight
-    public var size: CGFloat
-    public init(color: Color, backgroundColor: Color, type: Font.Weight, size: CGFloat = 24) {
+       
+        public var size: CGFloat
+        public init(color: Color, backgroundColor: Color, size: CGFloat = 24) {
             self.color = color
             self.backgroundColor = backgroundColor
-            self.type = type
-        self.size = size
+            self.size = size
         }
-    static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, type: .regular, size: 24)
+        static let defaultStyle = IconStyle(color: .black, backgroundColor: .clear, size: 24)
 }
-public enum Icons: String {
+public enum IconNames: String {
     // System SF Symbols
-    case lighteningBolt = "bolt.fill"
+        case lighteningBolt = "bolt.fill"
         case star = "star.fill"
         case heart = "heart.fill"
         case magnifyingGlass = "magnifyingglass"
@@ -40,10 +39,10 @@ public enum Icons: String {
         case camera = "camera.fill"
 
     // Custom icons
-    case window = "window"
-    case annotation = "annotation"
-    case highestPriority = "highestPriority"
-    
+        case window = "window"
+        case annotation = "annotation"
+        case highestPriority = "highestPriority"
+        
 
     // Determine if an icon is custom
     private var isCustom: Bool {
@@ -67,18 +66,24 @@ public enum Icons: String {
     }
 }
 public struct CustomIcon: View {
-    public let icon: Icons
-       public let style: IconStyle
-       public let id: String
-    public init(icon: Icons, style: IconStyle, id: String) {
+    public let icon: IconNames
+    public let id: String
+    public let type: Font.Weight
+    public let style: IconStyle
+    
+   
+    public init(icon: IconNames, id: String, type: Font.Weight, style: IconStyle ) {
            self.icon = icon
+        self.id = id
+        self.type=type
            self.style = style
-           self.id = id
+        
+           
        }
     public var body: some View {
         icon.image // Assuming you use SPM's default resource bundle
                .foregroundColor(style.color)
-               .font(.system(size: style.size, weight: style.type))
+               .font(.system(size: style.size, weight: type))
                .background(style.backgroundColor)
                .accessibilityLabel(Text(id))
        }
@@ -88,7 +93,7 @@ public struct CustomIcon: View {
 #if DEBUG
 struct CustomIcon_Previews: PreviewProvider {
     static var previews: some View {
-        CustomIcon(icon: .lighteningBolt, style: .defaultStyle , id : "Icon")
+        CustomIcon(icon: .lighteningBolt, id : "Icon",type: .thin , style: .defaultStyle )
     }
 }
 #endif
