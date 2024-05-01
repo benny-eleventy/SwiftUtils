@@ -9,9 +9,9 @@ import Foundation
 import SwiftUI
 
 public struct IconStyle {
+    
         public var color: Color
         public var backgroundColor: Color
-       
         public var size: CGFloat
         public init(color: Color, backgroundColor: Color, size: CGFloat = 24) {
             self.color = color
@@ -38,7 +38,7 @@ public enum IconNames: String {
         case photo = "photo.fill"
         case camera = "camera.fill"
 
-    // Custom icons
+    // Custom icons/ also add in the switch case below
         case window = "window"
         case annotation = "annotation"
         case highestPriority = "highestPriority"
@@ -48,7 +48,7 @@ public enum IconNames: String {
     // Determine if an icon is custom
     private var isCustom: Bool {
         switch self {
-        case .window, .annotation , .highestPriority :
+        case .window, .annotation , .highestPriority, .mosaic :
             return true
         default:
             return false
