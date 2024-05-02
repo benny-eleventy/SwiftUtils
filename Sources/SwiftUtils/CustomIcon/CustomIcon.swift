@@ -41,7 +41,7 @@ public struct CustomIcon: View {
                .foregroundColor(style.color)
                .font(Font.system(size: style.size, weight: type))
                .background(style.backgroundColor)
-               .accessibilityLabel(Text(id))
+               .accessibilityLabel(Text(id)).flipsForRightToLeftLayoutDirection(true)
        }
 
 }
