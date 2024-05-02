@@ -43,12 +43,13 @@ public enum IconNames: String {
         case annotation = "annotation"
         case highestPriority = "highestPriority"
         case mosaic = "mosaic"
+        case bubbles = "bubbles"
         
 
     // Determine if an icon is custom
     private var isCustom: Bool {
         switch self {
-        case .window, .annotation , .highestPriority, .mosaic :
+        case .window, .annotation , .highestPriority, .mosaic , .bubbles :
             return true
         default:
             return false
