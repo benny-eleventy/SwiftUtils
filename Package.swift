@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "SwiftUtils",
     platforms: [
-            .macOS(.v11) // This sets the minimum deployment target to macOS 11.0
+            .macOS(.v11),// This sets the minimum deployment target to macOS 11.0
+            .iOS(.v16) 
         ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
