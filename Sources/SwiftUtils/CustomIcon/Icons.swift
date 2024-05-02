@@ -9,21 +9,21 @@ import Foundation
 import SwiftUI
 public enum IconNames: String {
     // System SF Symbols
-        case lighteningBolt = "bolt.fill"
-        case star = "star.fill"
-        case heart = "heart.fill"
+        case lighteningBolt = "bolt"
+        case star = "star"
+        case heart = "heart"
         case magnifyingGlass = "magnifyingglass"
-        case envelope = "envelope.fill"
+        case envelope = "envelope"
         case gear = "gear"
-        case trash = "trash.fill"
-        case folder = "folder.fill"
-        case paperplane = "paperplane.fill"
-        case bookmark = "bookmark.fill"
-        case moon = "moon.fill"
-        case sunMax = "sun.max.fill"
+        case trash = "trash"
+        case folder = "folder"
+        case paperplane = "paperplane"
+        case bookmark = "bookmark"
+        case moon = "moon"
+        case sunMax = "sun.max"
         case pencil = "pencil"
-        case photo = "photo.fill"
-        case camera = "camera.fill"
+        case photo = "photo"
+        case camera = "camera"
 
     // Custom icons/ also add in the switch case below
         case window = "window"
