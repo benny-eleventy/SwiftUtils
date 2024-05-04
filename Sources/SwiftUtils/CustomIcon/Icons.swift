@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 public enum IconNames: String {
+    
+        case none = "none"
     // System SF Symbols
         case lighteningBolt = "bolt"
         case star = "star"
